@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+	<h1>Control Center</h1>
+	<input id="light" type="checkbox">LED</input>
+	<button id="sound" type="button">Play Sound</button>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+<script type="text/javascript">
+	const socket = io();
+	window.addEventListener('load', () => {
+		const lightbox = document.getElementById('light');
+		lightbox.addEventListener('change', () => {
+			// console.log(lightbox.checked)
+			socket.emit('light', Number(lightbox.checked))
+		});
+		const sound = document.getElementById('sound');
+		sound.addEventListener('click', () => {
+			// console.log('Sound button clicked')
+			socket.emit('sound');
+		});
+	});
+	socket.on('light', status => {
+		document.getElementById('light').checked = status;
+		socket.emit('light', status);
+	});
+</script>
+</html>
