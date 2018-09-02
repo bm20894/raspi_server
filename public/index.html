@@ -5,6 +5,8 @@
 	<h1>Control Center</h1>
 	<input id="light" type="checkbox">LED</input>
 	<button id="sound" type="button">Play Sound</button>
+	<button id="silence" type="button">Silence</button>
+
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
@@ -20,6 +22,11 @@
 		sound.addEventListener('click', () => {
 			// console.log('Sound button clicked')
 			socket.emit('sound');
+		});
+		const silence = document.getElementById('silence');
+		silence.addEventListener('click', () => {
+			// console.log('silence button clicked')
+			socket.emit('silence');
 		});
 	});
 	socket.on('light', status => {

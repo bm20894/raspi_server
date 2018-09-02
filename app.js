@@ -29,4 +29,7 @@ io.sockets.on('connection', socket => {
 		// console.log('I need to play a sound now!')
 		player.play({ file: './public/intro.wav' });
 	})
+	socket.on('silence', () => {
+		player.setVol(10000)
+	})
 })
