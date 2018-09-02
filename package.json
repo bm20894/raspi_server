@@ -1,0 +1,18 @@
+{
+  "name": "raspi-server",
+  "version": "1.0.0",
+  "description": "A socket.io server communicating with the raspberry pi, or any computer",
+  "main": "app.js",
+  "dependencies": {
+    "socket.io": "^2.1.1"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "pi@192.168.0.30:/home/pi/git/raspi-server/"
+  },
+  "author": "Miles Boswell",
+  "license": "ISC"
+}
