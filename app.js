@@ -23,7 +23,7 @@ io.sockets.on('connection', socket => {
 
 	socket.on('light', status => {
 		// console.log('Light set to: '' + status)
-		console.log('Light on: ' + status ? true : false)
+		console.log('Light on: ' + status == 1 ? true : false)
 	})
 
 	socket.on('sound', () => {
