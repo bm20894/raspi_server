@@ -22,7 +22,8 @@ function handler (req, res) {
 io.sockets.on('connection', socket => {
 
 	socket.on('light', status => {
-		console.log(status)
+		// console.log('Light set to: '' + status)
+		console.log('Light on: ' + status ? true : false)
 	})
 
 	socket.on('sound', () => {

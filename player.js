@@ -27,6 +27,7 @@ function play(param) {
 		if(e) return console.log("There was an error executing");
 		// console.log(`stdout: ${out}`);
 		// console.log(`stderr: ${err}`);
+		console.log("Finished playing " + f);
 	});
 }
 
