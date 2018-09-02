@@ -1,4 +1,10 @@
 #!/bin/bash
 git add .
-git commit -m "$1"
+
+mess="Committing some more changes"
+if [ $1 ]
+then
+	mess=$1
+fi
+git commit -m "$mess"
 git push raspberry master
